@@ -186,7 +186,6 @@ Password: admin123
 
 * Users cannot access tickets created by others
 * Only representatives and admins can:
-
   * Assign tickets
   * Change ticket status
 * Status updates must follow predefined transitions
@@ -216,8 +215,9 @@ Password: admin123
 
 ## Notes
 
-* The database file should not be committed to version control
-* Update the secret key before deploying to production
+* App.py needs to be uploaded 
+* Update the style.css commiment
+* Demonstrate A To Do list action Based on my Implmentation
 * This project is intended for demonstration and educational use
 
 ---
