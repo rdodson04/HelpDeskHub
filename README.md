@@ -2,6 +2,8 @@
 
 A role-based helpdesk ticketing system built with Flask. This project demonstrates authentication, ticket management, workflow control, and a structured support queue.
 
+NOTE: RECENT COMMIT MEANT COMPAREING FILES TO ORIGINAL HELPDESKHUB MAIN
+This is a template.
 ---
 
 ## Overview
