@@ -1,0 +1,77 @@
+{% extends "base_v2.html" %}
+{% set title = "Dashboard" %}
+
+{% block content %}
+
+<h2 class="mb-4">Dashboard</h2>
+
+<div class="row mb-4">
+
+  <div class="col-md-4">
+    <div class="card text-bg-primary">
+      <div class="card-body">
+        <h6>Total Tickets</h6>
+        <h3>{{ tickets|length }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card text-bg-success">
+      <div class="card-body">
+        <h6>Active</h6>
+        <h3>
+          {{ status_counts.get('Open', 0) + status_counts.get('In Progress', 0) }}
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card text-bg-secondary">
+      <div class="card-body">
+        <h6>Closed</h6>
+        <h3>{{ status_counts.get('Closed', 0) }}</h3>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5>By Status</h5>
+        <ul class="list-group">
+          {% for status, count in status_counts.items() %}
+            <li class="list-group-item d-flex justify-content-between">
+              {{ status }}
+              <span class="badge bg-primary">{{ count }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5>By Priority</h5>
+        <ul class="list-group">
+          {% for priority, count in priority_counts.items() %}
+            <li class="list-group-item d-flex justify-content-between">
+              {{ priority }}
+              <span class="badge bg-success">{{ count }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

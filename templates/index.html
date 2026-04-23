@@ -1,0 +1,20 @@
+{% extends "base_v2.html" %}
+{% set title = "Home" %}
+
+{% block content %}
+
+<div class="p-5 mb-4 bg-white rounded shadow-sm">
+  <h1 class="display-5 fw-bold">HelpDeskHub</h1>
+  <p class="lead">
+    A simple helpdesk system to manage tickets, track issues, and collaborate.
+  </p>
+
+  {% if not current_user.is_authenticated %}
+    <a class="btn btn-primary btn-lg" href="{{ url_for('register') }}">Get Started</a>
+    <a class="btn btn-outline-secondary btn-lg" href="{{ url_for('login') }}">Login</a>
+  {% else %}
+    <a class="btn btn-primary btn-lg" href="{{ url_for('tickets_list') }}">View Tickets</a>
+  {% endif %}
+</div>
+
+{% endblock %}
